@@ -1,12 +1,13 @@
-//エラーが出たので、別ファイルに切り出した。
-//エラーの対処のため、"use client"ディレクティブを書いた。
-//ファイルの先頭に追加することで、そのファイル内のコンポーネントはクライアントサイドでレンダリングされることが保証されます。
 "use client";
 
 import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 
-const AnimatedCounter = ({ amount }) => {
+interface AnimatedCounterProps {
+  amount: number;
+}
+
+const AnimatedCounter: React.FC<AnimatedCounterProps> = ({ amount }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
